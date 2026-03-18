@@ -8,8 +8,11 @@ app = FastAPI()
 def home():
     return {"status": "AlfaApi running 🚀"}
 
-# ✅ Health check (IMPORTANT for Leapcell)
+# ✅ Health check (ALL ROUTES - IMPORTANT)
 @app.get("/kaithealthcheck")
+@app.get("/health")
+@app.get("/healthz")
+@app.get("/ping")
 def health():
     return {"status": "ok"}
 
