@@ -21,12 +21,17 @@ def health():
 def search(title: str):
     try:
         ydl_opts = {
-            "format": "bestaudio/best",
-            "quiet": True,
-            "noplaylist": True,
-            "nocheckcertificate": True,
-            "default_search": "ytsearch",
-            "source_address": "0.0.0.0",
+    "format": "bestaudio/best",
+    "quiet": True,
+    "noplaylist": True,
+    "nocheckcertificate": True,
+    "default_search": "ytsearch",
+    "source_address": "0.0.0.0",
+    "extractor_args": {
+        "youtube": {
+            "player_client": ["android"]
+        }
+    }
         }
 
         with YoutubeDL(ydl_opts) as ydl:
